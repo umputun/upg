@@ -1,0 +1,18 @@
+09/06/2005 version 0.3.4
+
+[*] rss generator reimplemented in order to make code simpler  
+[+] added support of combined feed (all channels)
+[+] added support of channel groups (rss and web interface)
+[+] minor bug-fixes
+
+08/29/2005 version 0.3.3
+
+[+] Added automatic reconnection for mp3 ripper
+[+] Added support of posix-notation days in upg.xml (Grigory Bakunov)
+[*] Fixed problem with slow mp3 streams (timeout exception)
+[+] Added parameters timeout, maxtimeout, and maxconnections to upg.xml (settings key)
+[*] New channels automatically create directories and intro file
+
+08/28/2005 changes in 0.3.2
+
+[*] First public version

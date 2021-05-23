@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	timeshift (for Group and Settings) : difference in hours between your channel's timezone and your local time.
+	For example, if your local timezone is CDT (GMT-6), and your channels are in England (GMT+0), correct
+	value of timeshif will be 6
+	Duration : this field defines how long upg will record audio-stream (in minutes)	
+	Days: can be or numeric values (0..6) 0 is Mon here, or short name of the day (Mon .. Sat)
+	
+-->
+	
+<UPG>
+
+	<Groups>
+		<Group name='echo'  title='Эхо Москвы' timeshift='9'/>
+		<Group name='music' title='Музыка' timeshift='9'/>
+	</Groups>
+
+    <Channels>
+        <Item name='Код доступа' group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_code</Directory>
+            <Days>5</Days>
+            <Times>19:07</Times>
+            <Duration>65</Duration>
+        </Item>
+        <Item name='В круге света' group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_krug</Directory>
+            <Days>5</Days>
+            <Times>20:07</Times>
+            <Duration>65</Duration>
+        </Item>
+        <Item name="Контрудар" group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_kontr</Directory>
+            <Days>6</Days>
+            <Times>22:10</Times>
+            <Duration>60</Duration>
+        </Item>
+        <Item name="Выхода нет" group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_vihodanet</Directory>
+            <Days>6</Days>
+            <Times>21:10</Times>
+            <Duration>60</Duration>
+        </Item>
+        <Item name='Суть событий' group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_sob</Directory>
+            <Days>4</Days>
+            <Times>21:05</Times>
+            <Duration>60</Duration>
+        </Item>
+        <Item name='Особое мнение' group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_osobm</Directory>
+            <Days>0,1,2,3,4</Days>
+            <Times>19:07</Times>
+            <Duration>45</Duration>
+        </Item>
+           <Item name='Плавленный сырок' group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_sirok</Directory>
+            <Days>4</Days>
+            <Times>20:05</Times>
+            <Duration>35</Duration>
+        </Item>
+        <Item name='Ищем выход' group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_vihod</Directory>
+            <Days>0,1,2,3</Days>
+            <Times>20:05</Times>
+            <Duration>90</Duration>
+        </Item>
+       <Item name='Полный альбац' group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_albac</Directory>
+            <Days>6</Days>
+            <Times>19:04</Times>
+            <Duration>60</Duration>
+        </Item>
+        <Item name='Территория Амалии' group="echo">
+            <Url>http://ware.catv.ext.ru:8000/moscowecho48.mp3</Url>
+            <Directory>echo_amal</Directory>
+            <Days>4</Days>
+            <Times>23:00</Times>
+            <Duration>65</Duration>
+        </Item>
+
+
+       <Item name="Радио Союз" group="music">
+            <Url>http://terpsichore.net.rol.ru:8000/radiosouz-64</Url>
+            <Directory>radio_souz</Directory>
+            <Days>2,6</Days>
+            <Times>21:08</Times>
+            <Duration>60</Duration>
+        </Item>
+        <Item name='Серебряный дождь' group="music">
+            <Url>http://radio.silver.ru:8000/radio</Url>
+            <Directory>radio_silver</Directory>
+            <Days>1,5</Days>
+            <Times>18:00</Times>
+            <Duration>60</Duration>
+        </Item>
+         <Item name='Радио Джаз' group="music">
+            <Url>http://ware.catv.ext.ru:8000/radiojazz128.mp3</Url>
+            <Directory>rjaz</Directory>
+            <Days>2,6</Days>
+            <Times>06:00</Times>
+            <Duration>40</Duration>
+        </Item>
+       <Item name='Радио Classic' group="music">
+            <Url>http://ware.catv.ext.ru:8000/classic128.mp3</Url>
+            <Directory>rclassic</Directory>
+            <Days>5</Days>
+            <Times>14:00</Times>
+            <Duration>60</Duration>
+        </Item>
+       <Item name='Радио Ретро' group="music">
+            <Url>http://ware.catv.ext.ru:8000/radioretro128.mp3</Url>
+            <Directory>rretro</Directory>
+            <Days>1,3,5</Days>
+            <Times>17:00</Times>
+            <Duration>60</Duration>
+        </Item>
+
+      </Channels>
+
+
+    <Settings root="mp3" port="8282" ip="0.0.0.0" timeout="5" maxtimeouts="7" maxreconnects="10" maxdays="14"/>
+
+</UPG>
+

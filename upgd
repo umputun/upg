@@ -1,0 +1,84 @@
+#!/bin/sh
+
+# upgd
+#
+# chkconfig: 2345 20 80
+# description: Used to start and stop the UPG
+#
+# Script used to start UPG as daemon
+# The script has currently been tested on Redhat Fedora Core 3 and RHEL4
+# but should theoretically work on most UNIX like systems
+#
+# before running this script make sure $UPG_HOME/bin/upg is
+# executable by the user you want to run messenger as
+# (chmod +x $UPG_HOME/bin/upg)
+#
+# This script should be copied into /etc/init.d and linked into
+# your default runlevel directory.
+# You can find your default runlevel directory by typing:
+# grep default /etc/inittab
+#
+# Link to the directory like follows
+# cd /etc/rc<num>.d
+# ln -s ../init.d/upgd $90upgd
+#
+
+# Set this to tell this script where UPG lives
+# If this is not set the script will look for 
+# /opt/jive_messenger, then /usr/local/#
+#export UPG_HOME=
+
+
+# If there is a different user you would like to run this script as,
+# change the following line
+export UPG_USER=upg
+
+# -----------------------------------------------------------------
+
+# If a messenger home variable has not been specified, try to determine it
+if [ ! $UPG_HOME ]; then
+        if [ -d "/opt/upg" ]; then
+                UPG_HOME="/opt/upg"
+        elif [ -d "/usr/local/upg" ]; then
+                UPG_HOME="/usr/local/upg"
+        else
+                echo "Could not find UPG installation under /opt or /usr"
+		echo "Please specify the UPG installation location in en"                
+		exit 1
+        fi
+fi
+
+
+function execCommand() {
+        OLD_PWD=`pwd`
+        cd $UPG_HOME
+        CMD="./upg.py $1 >/dev/null"
+        su -c "$CMD" $UPG_USER &
+        cd $OLD_PWD
+}
+
+
+start() {
+        execCommand "--dbg=1"
+}
+
+stop() {
+        killall -INT upg.py
+}
+
+
+case "$1" in
+        start)
+                start
+                ;;
+        stop)
+                stop
+                ;;
+        *)
+                echo "Usage $0 {start|stop}"
+                exit 1
+esac
+
+exit 0
+
+

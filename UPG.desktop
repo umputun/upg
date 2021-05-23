@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=UPG
+Name[ru]=UPG
+Comment=UPG - mp3 streams to podcast
+Exec=upg.py
+Icon=upg.png
+Terminal=true
+Type=Application
+Categories=Network
+StartupNotify=true
+

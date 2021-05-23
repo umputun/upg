@@ -1,0 +1,18 @@
+# include anything in here that is not automatically picked up by distutils
+include UPG/__init__.py
+
+# images and icons, html and mp3
+include html/*.png html/*.ico html/*.gif html/*.html
+include upg.mp3
+include upg_sample.xml
+
+# documentation stuffs
+include COPYING LICENSE README ChangeLog AUTHORS MANIFEST.in
+
+# include windows build stuffs in the source
+# include upg.nsi build.bat winsetup.py
+
+# include all top level scripts
+include upg.py upgd postinstall.sh
+
+
